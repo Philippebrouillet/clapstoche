@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-family: sora;
+	color: #111827;
+}
+
+@layer components {
+	.hoverLink {
+		@apply hover:scale-105;
+	}
+	.activeLink {
+		@apply text-primary underline underline-offset-2;
+	}
+	.linkButton {
+		@apply inline-block mt-8 px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primaryPalet-600 transition duration-300;
+	}
+	.scrolling-content {
+		@apply flex items-center whitespace-nowrap;
+		animation: scroll 20s linear infinite;
+	}
+}
+
+.whiteImg {
+	filter: invert(1) brightness(2);
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+.scrolling-content.reverse {
+	animation-direction: reverse;
+}
