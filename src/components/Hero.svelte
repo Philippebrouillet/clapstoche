@@ -12,7 +12,7 @@
 				goûts et besoins.
 			</p>
 
-			<a href="menus" class="linkButton">Découvrez nos menus</a>
+			<a href="menus" class="linkButton mt-8">Découvrez nos menus</a>
 		</div>
 	</div>
 </section>

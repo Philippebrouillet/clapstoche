@@ -2,7 +2,7 @@
 	import saumon from '$lib/images/saumon.png';
 </script>
 
-<section class="bg-white py-56">
+<section class="bg-white paddingHomeSection">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center">
 			<blockquote class="italic text-xl text-gray-600 mb-8">

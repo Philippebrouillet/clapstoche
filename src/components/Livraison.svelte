@@ -1,4 +1,4 @@
-<section id="livraison" class="relative py-56 pb-22 px-4 sm:px-6 lg:px-8">
+<section id="livraison" class="relative paddingHomeSection pb-22 px-4 sm:px-6 lg:px-8">
 	<div class="absolute left-0 top-0 w-1/4 bg-primary h-full z-0"></div>
 	<div class="max-w-7xl mx-auto z-2 relative">
 		<!-- Titre de la section -->
@@ -176,6 +176,6 @@
 
 	<!-- Agence -->
 	<div class="text-center mt-12 z-2 relative">
-		<a href="/agence" class="linkButton">VOTRE AGENCE</a>
+		<a href="/agence" class="linkButton mt-8">VOTRE AGENCE</a>
 	</div>
 </section>

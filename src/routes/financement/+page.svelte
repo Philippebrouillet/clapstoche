@@ -45,7 +45,7 @@
 					de la vie quotidienne du fait d’un handicap. La prise en charge des dépenses liées au
 					handicap peut être totale ou partielle, et concernent certaines aides.
 				</p>
-				<a href="{href}/handicap" class="mt-auto self-end linkButton">EN SAVOIR PLUS</a>
+				<a href="{href}/handicap" class=" mt-auto self-end linkButton">EN SAVOIR PLUS</a>
 			</div>
 
 			<!-- Financement habitat -->

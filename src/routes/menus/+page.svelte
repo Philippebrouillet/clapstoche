@@ -50,13 +50,22 @@
 			<div class="bg-white p-6 rounded-lg shadow-md w-full max-w-4xl">
 				<h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Consultez nos Menus</h2>
 				<ul class="space-y-4 mb-12">
-					{#each menus as { name, path }}
+					{#each menus as { name, path }, i}
 						<li>
-							<button
-								on:click={() => selectMenu(path)}
+							<a
+								href="/menus/{i}"
 								class="flex items-center justify-between bg-gray-50 p-4 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300 w-full text-left"
 							>
-								<span class="text-lg text-gray-700">{name}</span>
+								<div class="text-lg text-gray-700 flex gap-5">
+									{name}
+									<!-- svelte-ignore a11y-click-events-have-key-events -->
+									<!-- svelte-ignore a11y-no-static-element-interactions -->
+									<i
+										class="fas fa-file-pdf text-xl hover:text-primary"
+										on:click|preventDefault={() => selectMenu(path)}
+									/>
+								</div>
+
 								<svg
 									class="w-6 h-6 text-gray-500"
 									fill="none"
@@ -71,7 +80,7 @@
 										d="M13 16l4-4m0 0l-4-4m4 4H6"
 									></path>
 								</svg>
-							</button>
+							</a>
 						</li>
 					{/each}
 				</ul>

@@ -14,14 +14,20 @@
 		@apply hover:scale-105;
 	}
 	.activeLink {
-		@apply text-primary underline underline-offset-2;
+		@apply text-secondary underline underline-offset-2;
+	}
+	.linkNav {
+		@apply transition-transform duration-100 hoverLink font-semibold uppercase text-xl  lg:text-xs xl:text-sm;
 	}
 	.linkButton {
-		@apply inline-block mt-8 px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primaryPalet-600 transition duration-300;
+		@apply inline-block px-8 py-3 bg-secondary text-white font-semibold rounded-lg shadow-md hover:bg-pink-800 transition duration-300;
 	}
 	.scrolling-content {
 		@apply flex items-center whitespace-nowrap;
 		animation: scroll 20s linear infinite;
+	}
+	.paddingHomeSection {
+		@apply py-32;
 	}
 }
 

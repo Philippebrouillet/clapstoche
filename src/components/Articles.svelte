@@ -1,10 +1,8 @@
 <script>
 	import articles from '../utils/articles';
-
-	let textContent;
 </script>
 
-<section class=" relative py-56 pt-22">
+<section class=" relative paddingHomeSection pt-22">
 	<div class="absolute right-0 top-0 w-1/4 bg-primary h-full z-0"></div>
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<h2 class="text-4xl font-bold mb-16 text-center">Clapstoche vous informe</h2>

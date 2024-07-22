@@ -2,67 +2,22 @@
 	import reduction from '$lib/images/reduction.png';
 	import si from '$lib/images/si.png';
 	import cheque from '$lib/images/chéque.png';
-
-	const currentYear = new Date().getFullYear();
+	import menus from '../utils/menu';
+	import articles from '../utils/articles';
 </script>
 
-<footer class="bg-gradient-to-b from-gray-800 via-gray-900 to-black text-white py-16">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<!-- Images -->
-		<div class="flex flex-wrap justify-center lg:justify-between space-x-6 mb-12">
-			<a
-				target="_blank"
-				href="https://www.economie.gouv.fr/particuliers/credit-impot-services-personne#"
-				class="w-24 h-24 p-2 bg-white rounded-full shadow-lg transform transition-transform hover:scale-110 duration-300"
-			>
-				<img src={reduction} alt="Logo 1" class="w-full h-full object-contain" />
-			</a>
-			<div
-				class="w-24 h-24 p-2 bg-white rounded-full shadow-lg transform transition-transform hover:scale-110 duration-300"
-			>
-				<img src={si} alt="Logo 2" class="w-full h-full object-contain" />
-			</div>
-			<div
-				class="w-24 h-24 p-2 bg-white rounded-full shadow-lg transform transition-transform hover:scale-110 duration-300"
-			>
-				<img src={cheque} alt="Logo 3" class="w-full h-full object-contain" />
-			</div>
-		</div>
-
-		<!-- Textes -->
-		<div
-			class="flex flex-col lg:flex-row lg:justify-between items-center space-y-6 lg:space-y-0 mb-12"
-		>
-			<div class="text-center lg:text-left">
-				<p class="text-4xl font-bold mb-4">Clapstoche {currentYear}</p>
-			</div>
-			<div class="flex flex-col lg:flex-row items-center lg:space-x-8 space-y-4 lg:space-y-0">
+<footer
+	class="bg-gradient-to-b flex justify-center from-gray-800 via-gray-900 to-black text-white py-10"
+>
+	<div class="flex flex-col gap-20 lg:flex-row container">
+		<div class="flex flex-col items-center md:mr-10">
+			<img src="/src/lib/images/logo.png" alt="Saveurs et Vie" class="mb-10" />
+			<div class="flex space-x-4 mb-4">
 				<a
-					href="/mentions-legales"
-					class="text-gray-300 hover:text-gray-100 transition-colors duration-300 text-lg"
+					target="_blank"
+					href="https://facebook.com"
+					class="hover:text-gray-300 transition-colors duration-300"
 				>
-					Mentions Légales
-				</a>
-				<a
-					href="/protection-donnees"
-					class="text-gray-300 hover:text-gray-100 transition-colors duration-300 text-lg"
-				>
-					Protection des données personnelles
-				</a>
-				<a
-					href="/administration"
-					class="text-gray-300 hover:text-gray-100 transition-colors duration-300 text-lg"
-				>
-					Administration
-				</a>
-			</div>
-		</div>
-
-		<!-- Footer Bottom -->
-		<div class="text-center lg:text-left text-gray-400 text-sm">
-			<p>&copy; {currentYear} Clapstoche. Tous droits réservés.</p>
-			<div class="flex justify-center lg:justify-start space-x-4 mt-4">
-				<a href="https://facebook.com" class="hover:text-gray-300 transition-colors duration-300">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="h-6 w-6"
@@ -74,7 +29,11 @@
 						/>
 					</svg>
 				</a>
-				<a href="https://twitter.com" class="hover:text-gray-300 transition-colors duration-300">
+				<a
+					target="_blank"
+					href="https://twitter.com"
+					class="hover:text-gray-300 transition-colors duration-300"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="h-6 w-6"
@@ -86,7 +45,11 @@
 						/>
 					</svg>
 				</a>
-				<a href="https://instagram.com" class="hover:text-gray-300 transition-colors duration-300">
+				<a
+					target="_blank"
+					href="https://instagram.com"
+					class="hover:text-gray-300 transition-colors duration-300"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="h-6 w-6"
@@ -99,6 +62,101 @@
 					</svg>
 				</a>
 			</div>
+			<a href="/tarifs" class="bg-transparent border border-white px-4 py-2 mb-2 w-3/4 lg:w-full"
+				>NOS TARIFS</a
+			>
+			<a
+				href="https://portage.clapstoche.com/PORTAGE_DE_REPAS/"
+				class="bg-transparent border border-white px-4 py-2 mb-2 w-3/4 lg:w-full"
+				>JE SUIS DÉJÀ CLIENT</a
+			>
+			<a href="/menus" class="bg-secondary hover:bg-white text-white px-4 py-2 w-3/4 lg:w-full"
+				>COMMANDER EN LIGNE</a
+			>
+		</div>
+		<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-2">
+			<div>
+				<h3 class="font-bold mb-4">Nos repas</h3>
+				<ul class="space-y-2 text-sm mb-4">
+					<li>
+						<a href="/menus">Découvrir nos menus </a>
+					</li>
+					{#each menus as menu, i}
+						<li>
+							<a href="/menus/{i}">{menu.name}</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
+
+			<div>
+				<h3 class="font-bold mb-4">Articles</h3>
+				<ul class="space-y-2 text-sm mb-4">
+					<li>
+						<a href="/actualites">Découvrir les actualités </a>
+					</li>
+					{#each articles as actu, i}
+						<li>
+							<a href="/actualites/{i}">{actu.title}</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
+
+			<div>
+				<h3 class="font-bold mb-4">Financements</h3>
+				<ul class="space-y-2 text-sm mb-4">
+					<li>
+						<a href="/financement">Les financements</a>
+					</li>
+					<li>
+						<a href="/financement/seniors">Financement seniors</a>
+					</li>
+					<li>
+						<a href="/financement/handicap">Financement handicap</a>
+					</li>
+					<li>
+						<a href="/financement/habitat">Financement habitat</a>
+					</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3 class="font-bold mb-4">Comment ça marche</h3>
+				<ul class="space-y-2 text-sm mb-4">
+					<li><a href="/infos">Qui sommes nous?</a></li>
+					<li>Préparation des repas</li>
+					<li><a href="/#livraison">Livraison</a></li>
+					<li>FAQ</li>
+				</ul>
+				<h3 class="font-bold mb-4">Expertise nutrition</h3>
+				<ul class="space-y-2 text-sm mb-4">
+					<li><a href="/menus">Nos repas</a></li>
+					<li><a href="/infos">L'histoire de Clapstoche</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h3 class="font-bold mb-4">Qui sommes-nous ?</h3>
+				<ul class="space-y-2 text-sm mb-4">
+					<li><a href="/#partenaires">Nos partenaires</a></li>
+					<li><a href="/agence">Notre agence</a></li>
+				</ul>
+				<h3 class="font-bold mb-4">Besoin d'aide ?</h3>
+				<ul class="space-y-2 text-sm mb-4">
+					<li>Contactez-nous</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </footer>
+
+<style>
+	a {
+		transition: color 150ms;
+	}
+
+	a:hover {
+		color: #be185d;
+	}
+</style>

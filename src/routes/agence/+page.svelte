@@ -1,5 +1,6 @@
 <script>
 	import fabien from '$lib/images/Fabien.png';
+	import { browser } from '$app/environment';
 
 	function initMap() {
 		const agencyLocation = { lat: 48.8566, lng: 2.3522 }; // Replace with actual coordinates
@@ -12,7 +13,7 @@
 			map: map
 		});
 	}
-	window.onload = initMap;
+	if (browser) window.onload = initMap;
 </script>
 
 <svelte:head>

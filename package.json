@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"dayjs": "^1.11.12",
 		"svelte-carousel": "^1.0.25"
 	}
 }

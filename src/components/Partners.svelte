@@ -2,7 +2,7 @@
 	import partners from '../utils/partners';
 </script>
 
-<section class="py-56 bg-white">
+<section id="partenaires" class="paddingHomeSection bg-white">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<h2 class="text-3xl font-bold text-primary mb-8 text-center">Nos Partenaires</h2>
 		<div class="relative">

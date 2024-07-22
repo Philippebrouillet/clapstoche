@@ -3,8 +3,17 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
+			screens: {
+				navbar: '90rem',
+				navbarBreakpoint: '1100px'
+			},
+			maxWidth: {
+				navbar: '90rem',
+				navbarBreakpoint: '1100px'
+			},
 			colors: {
 				primary: '#97C00E',
+				secondary: '#be185d',
 				primaryPalet: {
 					50: '#FBFFE6',
 					100: '#F6FEC9',
