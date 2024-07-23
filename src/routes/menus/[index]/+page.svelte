@@ -5,13 +5,13 @@
 	import 'dayjs/locale/fr';
 	import Carousel from 'svelte-carousel';
 
-	$: menu = menus[$page.params.index];
+	$: menuss = menus[$page.params.index];
 
 	//rendre la page dynamique en fonction du menu
 	//remplir les menus avec les bonne data dans menu.js
 	//remplacer weekMenu par menu
 
-	let menuDescription = `Notre menu Gourmet s’adresse à tout sénior qui n’a pas de contrainte alimentaire spécifique ou de pathologie nécessitant un régime alimentaire particulier. Notre menu Gourmet est mijoté par nos Chefs cuisiniers et validé par notre diététicienne, en tenant compte des recommandations du Plan National Nutrition Santé et des besoins énergétiques et nutritionnels des seniors. Laissez-vous tenter par notre menu de la semaine, entre les plats traditionnels et les plus exotiques il y en a pour tous les goûts. Bon appétit !`;
+	// let menuDescription = `Notre menu Gourmet s’adresse à tout sénior qui n’a pas de contrainte alimentaire spécifique ou de pathologie nécessitant un régime alimentaire particulier. Notre menu Gourmet est mijoté par nos Chefs cuisiniers et validé par notre diététicienne, en tenant compte des recommandations du Plan National Nutrition Santé et des besoins énergétiques et nutritionnels des seniors. Laissez-vous tenter par notre menu de la semaine, entre les plats traditionnels et les plus exotiques il y en a pour tous les goûts. Bon appétit !`;
 	let buttonText = 'COMMANDER EN LIGNE';
 
 	const today = dayjs().locale('fr');
@@ -71,9 +71,9 @@
 
 		<!-- Section du texte et du bouton -->
 		<div class="lg:w-1/2 mt-8 lg:mt-0 lg:pl-8 flex flex-col justify-center text-center">
-			<h2 class="text-secondary text-xl font-semibold mb-10 uppercase">{menu?.name}</h2>
-			<h1 class="text-4xl font-extrabold text-gray-800 mb-8 uppercase">{menu?.name}</h1>
-			<p class="text-gray-600 mb-6 text-sm text-justify">{menuDescription}</p>
+			<h2 class="text-secondary text-xl font-semibold mb-10 uppercase">{menuss?.name}</h2>
+			<h1 class="text-4xl font-extrabold text-gray-800 mb-8 uppercase">{menuss?.name}</h1>
+			<p class="text-gray-600 mb-6 text-sm text-justify">{menuss.description}</p>
 			<button
 				class="bg-primary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primaryPalet-600 transition duration-150"
 			>
@@ -100,15 +100,15 @@
 			<div class="py-10 px-4 w-full">
 				{#key numberParticules}
 					<Carousel particlesToShow={numberParticules} infinite={false}>
-						{#each weekMenu as menu}
+						{#each menuss.menus as menu}
 							<div class="p-2 w-full">
 								<div
 									class="bg-gray-100 flex flex-col justify-between px-3 p-6 rounded-md shadow-md h-[600px]"
 								>
 									<div class="flex flex-col gap-2 items-center">
-										<h3 class="text-xl font-semibold">{menu.date.format('D MMMM')}</h3>
+										<!-- <h3 class="text-xl font-semibold">{menu.date.format('D MMMM')}</h3> -->
 										<img
-											src="/src/lib/images/food2.png"
+											src={menu.logo}
 											alt="Logo Saveurs et Vie"
 											class="h-[150px] w-[150px] object-cover mt-6 mb-10"
 										/>

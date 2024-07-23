@@ -38,13 +38,13 @@
 	<!-- top side bar  -->
 	<div class="w-full bg-primary flex justify-center items-center z-20">
 		<div class="max-w-navbar relative w-full flex items-center justify-between text-white px-6">
-			<div class="flex items-center gap-2 py-2.5 px-6 bg-secondary">
+			<a href="tel:+33145189398" class="flex items-center gap-2 py-2.5 px-6 bg-secondary">
 				<div class="rounded-full bg-white px-1.5 py-0">
 					<i class="fa-solid fa-phone text-sm text-secondary"></i>
 				</div>
 
 				<span>01 45 18 93 98</span>
-			</div>
+			</a>
 			<div class="hidden text-sm md:flex gap-0.5 items-center">
 				<img
 					src={combosireduc}
