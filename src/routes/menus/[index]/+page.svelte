@@ -4,15 +4,24 @@
 	import dayjs from 'dayjs';
 	import 'dayjs/locale/fr';
 	import Carousel from 'svelte-carousel';
+	import PdfModal from '../../../components/PdfModal.svelte';
 
-	$: menuss = menus[$page.params.index];
+	$: menu = menus[$page.params.index];
 
+	let selectedMenu = null;
+
+	function selectMenu(menu) {
+		selectedMenu = menu;
+	}
+
+	function closeMenu() {
+		selectedMenu = null;
+	}
 	//rendre la page dynamique en fonction du menu
 	//remplir les menus avec les bonne data dans menu.js
 	//remplacer weekMenu par menu
 
 	// let menuDescription = `Notre menu Gourmet s’adresse à tout sénior qui n’a pas de contrainte alimentaire spécifique ou de pathologie nécessitant un régime alimentaire particulier. Notre menu Gourmet est mijoté par nos Chefs cuisiniers et validé par notre diététicienne, en tenant compte des recommandations du Plan National Nutrition Santé et des besoins énergétiques et nutritionnels des seniors. Laissez-vous tenter par notre menu de la semaine, entre les plats traditionnels et les plus exotiques il y en a pour tous les goûts. Bon appétit !`;
-	let buttonText = 'COMMANDER EN LIGNE';
 
 	const today = dayjs().locale('fr');
 	const menu__ = {
@@ -71,14 +80,19 @@
 
 		<!-- Section du texte et du bouton -->
 		<div class="lg:w-1/2 mt-8 lg:mt-0 lg:pl-8 flex flex-col justify-center text-center">
-			<h2 class="text-secondary text-xl font-semibold mb-10 uppercase">{menuss?.name}</h2>
-			<h1 class="text-4xl font-extrabold text-gray-800 mb-8 uppercase">{menuss?.name}</h1>
-			<p class="text-gray-600 mb-6 text-sm text-justify">{menuss.description}</p>
+			<h2 class="text-secondary text-xl font-semibold mb-10 uppercase">{menu?.name}</h2>
+			<h1 class="text-4xl font-extrabold text-gray-800 mb-8 uppercase">{menu?.name}</h1>
+			<p class="text-gray-600 mb-6 text-sm text-justify">{menu.description}</p>
+			<button
+				class="bg-primary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primaryPalet-600 transition duration-150 mb-4"
+			>
+				Commander en ligne
+			</button>
 			<button
 				class="bg-primary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primaryPalet-600 transition duration-150"
+				on:click|preventDefault={() => selectMenu(menu.path)}
+				><i class="fas fa-file-pdf text-xl hover:text-primary" /></button
 			>
-				{buttonText}
-			</button>
 		</div>
 	</div>
 </div>
@@ -100,7 +114,7 @@
 			<div class="py-10 px-4 w-full">
 				{#key numberParticules}
 					<Carousel particlesToShow={numberParticules} infinite={false}>
-						{#each menuss.menus as menu}
+						{#each menu.menus as menuu}
 							<div class="p-2 w-full">
 								<div
 									class="bg-gray-100 flex flex-col justify-between px-3 p-6 rounded-md shadow-md h-[600px]"
@@ -108,7 +122,7 @@
 									<div class="flex flex-col gap-2 items-center">
 										<!-- <h3 class="text-xl font-semibold">{menu.date.format('D MMMM')}</h3> -->
 										<img
-											src={menu.logo}
+											src={menuu.logo}
 											alt="Logo Saveurs et Vie"
 											class="h-[150px] w-[150px] object-cover mt-6 mb-10"
 										/>
@@ -116,20 +130,20 @@
 									<div class="flex flex-col gap-3">
 										<div class="flex flex-col bg-white rounded-md p-4 mb-2">
 											<p class="font-bold">ENTRÉE</p>
-											<p>{menu.meals.entree}</p>
+											<p>{menuu.meals.entree}</p>
 										</div>
 										<div class="flex flex-col bg-white rounded-md p-4 mb-2">
 											<p class="font-bold">PLAT COMPLET</p>
-											<p>{menu.meals.plat}</p>
+											<p>{menuu.meals.plat}</p>
 										</div>
 										<div class="flex flex-col bg-white rounded-md p-4 mb-2">
 											<p class="font-bold">DESSERT</p>
-											<p>{menu.meals.laitage}</p>
+											<p>{menuu.meals.laitage}</p>
 										</div>
-										{#if menu.meals.dessert}
+										{#if menuu.meals.dessert}
 											<div class="flex flex-col bg-white rounded-md p-4 mb-2">
 												<p class="font-bold">DESSERT</p>
-												<p>{menu.meals.dessert}</p>
+												<p>{menuu.meals.dessert}</p>
 											</div>
 										{/if}
 									</div>
@@ -149,3 +163,8 @@
 		</div>
 	</div>
 </section>
+
+<!-- Affichage du PDF sélectionné -->
+{#if selectedMenu}
+	<PdfModal selectedPdf={selectedMenu} {closeMenu} />
+{/if}
