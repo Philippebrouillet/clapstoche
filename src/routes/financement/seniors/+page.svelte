@@ -46,7 +46,7 @@
 			<li>
 				<p>
 					La première étape consiste à télécharger un dossier de demande d’APA <a
-						href="#"
+						href="/"
 						class="text-blue-800 underline">(cliquez ici)</a
 					> ou à le retirer auprès de votre mairie (CCAS), du Conseil départemental ou d’un point d’information
 					local :
@@ -58,7 +58,7 @@
 					</li>
 					<li>
 						Plateforme d’accompagnement et de répit, pour répondre aux besoins des aidants, dont
-						vous trouverez la liste en <a href="#" class="text-blue-800 underline"
+						vous trouverez la liste en <a href="/" class="text-blue-800 underline"
 							>cliquant sur ce lien</a
 						>.
 					</li>

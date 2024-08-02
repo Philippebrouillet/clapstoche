@@ -223,7 +223,7 @@
 		<!--  Tarifs -->
 		<div class="mb-12 grid grid-cols-1 gap-12">
 			<button
-				on:click={() => selectTarif('/src/lib/pdf/tarif/tarifs-autres-prestations.pdf')}
+				on:click={() => selectTarif('$lib/pdf/tarif/tarifs-autres-prestations.pdf')}
 				class="bg-primary p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:bg-primaryPalet-600 focus:outline-none"
 			>
 				<div class="flex justify-center items-center space-x-4">

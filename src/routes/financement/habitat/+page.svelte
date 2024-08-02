@@ -11,7 +11,7 @@
 				<strong>L’APL (aide personnalisée au logement) :</strong> versée uniquement si le logement
 				ou l’établissement sont conventionnés, c’est-à-dire qu’une convention avec le Préfet a été
 				signée par le bailleur ou l’établissement. Pour obtenir l’information sur le
-				conventionnement APL des EHPAD <a href="#" class="text-blue-800 underline">cliquez ici</a>.
+				conventionnement APL des EHPAD <a href="/" class="text-blue-800 underline">cliquez ici</a>.
 			</li>
 			<li><strong>L’ALS (allocation de logement sociale) :</strong> versée dans les autres cas.</li>
 		</ul>

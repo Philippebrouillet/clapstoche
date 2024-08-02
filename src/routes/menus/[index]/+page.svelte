@@ -7,6 +7,7 @@
 	import Carousel from 'svelte-carousel';
 	import PdfModal from '../../../components/PdfModal.svelte';
 	import Loader from '../../../components/Loader.svelte';
+	import food from '$lib/images/food2.png';
 
 	$: menu = menus[$page.params.index];
 
@@ -27,7 +28,7 @@
 
 	const today = dayjs().locale('fr');
 	const menu__ = {
-		logo: '/src/lib/images/saveur_et_vie.png',
+		logo: food,
 		meals: {
 			entree: 'Terrine de volaille',
 			plat: "Jarret de boeuf sauce à l'oignon et petits pois",
@@ -64,18 +65,18 @@
 			<div class="lg:w-1/2 flex justify-center items-center">
 				<div class="flex gap-3.5 items-center lg:ml-6">
 					<img
-						src="/src/lib/images/food2.png"
+						src={food}
 						alt="Senior eating"
 						class="  rounded-md mb-4 w-[180px] min-w-[180px] h-[300px] lg:w-[240px] lg:min-w-[240px] lg:h-[400px] object-cover"
 					/>
 					<div class="grid grid-cols-1 gap-2 w-full transfrom translate-y-[15%]">
 						<img
-							src="/src/lib/images/food2.png"
+							src={food}
 							alt="Dish 1"
 							class="w-[120px] min-w-[120px] h-[140px] lg:w-[160px] lg:min-w-[160px] lg:h-[180px] rounded-md object-cover"
 						/>
 						<img
-							src="/src/lib/images/food2.png"
+							src={food}
 							alt="Dish 2"
 							class=" w-[120px] min-w-[120px] h-[140px] lg:w-[160px] lg:min-w-[160px] lg:h-[180px] rounded-md object-cover"
 						/>

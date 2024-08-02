@@ -1,6 +1,12 @@
-const urlImg = '/src/lib/images/articles';
+const images = import.meta.glob('$lib/images/articles/*.png', { eager: true });
+const articlesimagess = Object.entries(images).map(([path, module]) => ({
+	imagePath: module.default,
+	alt: path.split('/').pop().replace('.png', '')
+}));
+
 const formatUrl = (imgName) => {
-	return `${urlImg}/${imgName}.png`;
+	const path = articlesimagess.find((image) => imgName === image.alt);
+	return path?.imagePath;
 };
 const articles = [
 	{

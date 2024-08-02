@@ -1,4 +1,7 @@
-const menus = import.meta.glob('/src/lib/pdf/menus/*.pdf', { eager: true });
+import food from '$lib/images/food2.png';
+
+const menus = import.meta.glob('$lib/pdf/menus/*.pdf', { eager: true });
+
 function formatMenuName(str) {
 	return str.replaceAll('-', ' ').replace(/\b(?!a\b)[a-z]/g, (char) => char.toUpperCase());
 }
@@ -9,7 +12,7 @@ const menusPath = Object.entries(menus)
 		description: 'bla',
 		menus: [
 			{
-				logo: '/src/lib/images/saveur_et_vie.png',
+				logo: food,
 				meals: {
 					entree: 'Terrine de volaille',
 					plat: "Jarret de boeuf sauce à l'oignon et petits pois",
@@ -19,7 +22,7 @@ const menusPath = Object.entries(menus)
 				date: undefined
 			},
 			{
-				logo: '/src/lib/images/saveur_et_vie.png',
+				logo: food,
 				meals: {
 					entree: 'Terrine de volaille',
 					plat: "Jarret de boeuf sauce à l'oignon et petits pois",

@@ -11,11 +11,11 @@
 
 <!-- Super Section -->
 <Portage />
+
 <!-- Livraison -->
 <Livraison />
 
 <!-- articles -->
-
 <Articles />
 
 <!-- partners -->

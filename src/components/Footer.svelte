@@ -1,7 +1,6 @@
 <script>
-	import reduction from '$lib/images/reduction.png';
-	import si from '$lib/images/si.png';
-	import cheque from '$lib/images/chéque.png';
+	import logo from '$lib/images/logo.png';
+
 	import menus from '../utils/menu';
 	import articles from '../utils/articles';
 </script>
@@ -11,7 +10,7 @@
 >
 	<div class="flex flex-col gap-20 lg:flex-row container">
 		<div class="flex flex-col items-center md:mr-10">
-			<img src="/src/lib/images/logo.png" alt="Saveurs et Vie" class="mb-10" />
+			<img src={logo} alt="Saveurs et Vie" class="mb-10" />
 			<div class="flex space-x-4 mb-4">
 				<a
 					target="_blank"

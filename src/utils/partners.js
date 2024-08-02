@@ -1,4 +1,4 @@
-const images = import.meta.glob('/src/lib/images/partenaires/*.png', { eager: true });
+const images = import.meta.glob('$lib/images/partenaires/*.png', { eager: true });
 
 const partners = Object.entries(images).map(([path, module]) => ({
 	logo: module.default,
