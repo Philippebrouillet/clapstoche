@@ -1,15 +1,16 @@
 <script>
 	import PdfModal from '../../components/PdfModal.svelte';
 	import photo from '$lib/images/food.png';
+	import pdf from '$lib/pdf/tarif/tarifs-autres-prestations.pdf';
 
-	let selectedTarif = null;
+	let selectedPdf = null;
 
-	function selectTarif(tarif) {
-		selectedTarif = tarif;
+	function openPdf() {
+		selectedPdf = pdf;
 	}
 
 	function closeMenu() {
-		selectedTarif = null;
+		selectedPdf = null;
 	}
 	const optionsLiberté = [
 		{
@@ -223,7 +224,7 @@
 		<!--  Tarifs -->
 		<div class="mb-12 grid grid-cols-1 gap-12">
 			<button
-				on:click={() => selectTarif('$lib/pdf/tarif/tarifs-autres-prestations.pdf')}
+				on:click={openPdf}
 				class="bg-primary p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:bg-primaryPalet-600 focus:outline-none"
 			>
 				<div class="flex justify-center items-center space-x-4">
@@ -268,6 +269,6 @@
 </main>
 
 <!-- Affichage du PDF sélectionné -->
-{#if selectedTarif}
-	<PdfModal selectedPdf={selectedTarif} {closeMenu} />
+{#if selectedPdf}
+	<PdfModal {selectedPdf} {closeMenu} />
 {/if}
